@@ -57,6 +57,19 @@ sub get_hex
   $self->{map}{"$q$r"};
 }
 
+=head2 count_sides
+
+Returns a count of all unique sides in the grid.
+
+=cut
+
+sub count_sides
+{
+  my ($self) = @_;
+  my $n = keys %{$self->{map}};
+  ($n-1) * 3 + $n-1 + 6;
+}
+
 =head1 SEE ALSO
 
 This code was helped by Amit Patel's L<articles|http://www.redblobgames.com/grids/hexagons/> on hexagonal grids.
