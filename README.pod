@@ -1,0 +1,45 @@
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+Math::HexGrid - Math::HexGrid - create hex coordinate grids
+
+=head1 VERSION
+
+version 0.01
+
+=head1 DESCRIPTION
+
+This module is for creating hex grids of L<Math::HexGrid::Grid> objects. For
+now it only supports hexagonally-shaped grids. It supports both cube and
+axial (trapezoidal) coordinate systems.
+
+=head1 METHODS
+
+=head2 new_hexagon ($radius)
+
+Constructs a new hexagonally-shaped grid of size C<$radius>.
+
+=head2 get_hex ($q, $r)
+
+Returns the hex at location C<$q> and C<$r>.
+
+=head1 SEE ALSO
+
+This code was helped by Amit Patel's L<articles|http://www.redblobgames.com/grids/hexagons/> on hexagonal grids.
+
+=head1 AUTHOR
+
+David Farrell <dfarrell@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2015 by David Farrell.
+
+This is free software, licensed under:
+
+  The (two-clause) FreeBSD License
+
+=cut
