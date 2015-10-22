@@ -10,7 +10,7 @@ use List::Util qw/min max/;
 
 =head1 DESCRIPTION
 
-This module is for creating hex grids of L<Math::HexGrid::Grid> objects. For
+This module is for creating hex grids of C<Math::HexGrid::Grid> objects. For
 now it only supports hexagonally-shaped grids. It supports both cube and
 axial (trapezoidal) coordinate systems.
 
