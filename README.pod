@@ -8,7 +8,7 @@ Math::HexGrid - Math::HexGrid - create hex coordinate grids
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 DESCRIPTION
 
@@ -22,9 +22,21 @@ axial (trapezoidal) coordinate systems.
 
 Constructs a new hexagonally-shaped grid of size C<$radius>.
 
-=head2 get_hex ($q, $r)
+=head2 new_triangle ($rows)
+
+Constructs a new triangle-shaped grid with C<$rows> number of rows.
+
+=head2 hexgrid
+
+Returns a hashref of all hexes in the grid.
+
+=head2 hex ($q, $r)
 
 Returns the hex at location C<$q> and C<$r>.
+
+=head2 count_sides
+
+Returns a count of all unique sides (edges) in the grid.
 
 =head1 SEE ALSO
 
