@@ -10,7 +10,7 @@ use List::Util qw/min max/;
 
 =head1 DESCRIPTION
 
-This module is for creating hex grids of C<Math::HexGrid::Grid> objects. For
+This module is for creating hex grids of L<Math::HexGrid::Grid> objects. For
 now it only supports hexagonally-shaped grids. It supports both cube and
 axial (trapezoidal) coordinate systems.
 
@@ -36,7 +36,8 @@ sub new_hexagon
 
     for (my $r = $r1; $r <= $r2; $r++)
     {
-      $map{"$q$r"} = Math::HexGrid::Hex->new($q, $r);
+      my ($x,$y) = ($q, $r);
+      $map{"$x$y"} = Math::HexGrid::Hex->new($q, $r);
     }
   }
 
@@ -61,7 +62,8 @@ sub new_triangle
   {
     for (my $r = 0; $r <= $rows - $q; $r++)
     {
-      $map{"$q$r"} = Math::HexGrid::Hex->new($q, $r);
+      my ($x,$y) = ($q, $r);
+      $map{"$x$y"} = Math::HexGrid::Hex->new($q, $r);
     }
   }
   bless {
@@ -87,7 +89,8 @@ Returns the hex at location C<$q> and C<$r>.
 sub hex
 {
   my ($self, $q, $r) = @_;
-  $self->{map}{"$q$r"};
+  my ($x,$y) = ($q, $r);
+  $self->{map}{"$x$y"};
 }
 
 =head2 count_sides

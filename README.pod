@@ -8,11 +8,11 @@ Math::HexGrid - Math::HexGrid - create hex coordinate grids
 
 =head1 VERSION
 
-version 0.02
+version 0.04
 
 =head1 DESCRIPTION
 
-This module is for creating hex grids of C<Math::HexGrid::Grid> objects. For
+This module is for creating hex grids of L<Math::HexGrid::Grid> objects. For
 now it only supports hexagonally-shaped grids. It supports both cube and
 axial (trapezoidal) coordinate systems.
 

@@ -2,6 +2,12 @@ use strict;
 use warnings;
 package Math::HexGrid::Hex;
 
+use overload
+  '""' => 'to_string',
+  fallback => 1;
+
+sub to_string { $_[0]->{id} }
+
 =head1 NAME
 
 Math::HexGrid::Hex - a hex class for use with hex grids
@@ -24,7 +30,7 @@ and neighbor.
 
 =head2 new ($q, $r, $s)
 
-Creates a new Hex object.
+Creates a new Hex object, the C<$s> integer is optional.
 
 =cut
 
@@ -39,8 +45,20 @@ sub new
     unless defined $q && defined $r && defined $s
       && $q + $r + $s == 0;
 
-  bless { q => $q, r => $r, s => $s }, $class;
+  # make a copy to avoid unintended stringification
+  my $x = $q;
+  my $y = $r;
+
+  bless { q => $q, r => $r, s => $s, id => "$x,$y" }, $class;
 }
+
+=head2 id
+
+Returns a comma-separated string of the Hex's q and r coordinates.
+
+=cut
+
+sub id { $_[0]->{id} }
 
 =head2 hex_equal ($hex)
 
@@ -56,6 +74,14 @@ sub hex_equal
     && $self->{r} == $hex->{r}
     && $self->{s} == $hex->{s};
 }
+
+=head2 is_colliding ($hex)
+
+Same as C<hex_equal>.
+
+=cut
+
+sub is_colliding { $_[0]->hex_equal($_[1]) }
 
 =head2 hex_add($hex)
 
