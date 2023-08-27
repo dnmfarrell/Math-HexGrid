@@ -4,7 +4,7 @@ use warnings;
 use lib 'lib';
 use Test::More;
 
-use_ok 'Math::HexGrid', 'import module';
+use_ok 'Math::HexGrid';
 
 # hexagon shape
 ok my $hexgrid = Math::HexGrid->new_hexagon(2), 'create a hexagon';
